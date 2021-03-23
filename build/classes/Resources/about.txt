@@ -1,0 +1,165 @@
+Aplikasi ini dibuat sebagai tugas Pengenalan Pola
+
+Tab File :
+	1. Open Image
+		Mengambil citra dari direktori
+	2. Save As
+		Menyimpan citra
+		2.a. JPG
+		2.b. JPEG
+	3. Close
+		Menutup aplikasi
+		
+Tab Edit :
+	1. Undo
+		Mengembalikan keadaan citra ke keadaan sebelumnya
+	2. Mirror X
+		Pencerminan citra terhadap sumbu X
+	3. Mirror Y
+		Pencerminan citra terhadap sumbu Y
+	4. Rotate Clock Wise
+		Citra yang diputar searah jarum jam (Clock Wise) sejauh 90 derajat
+	5. Rotate Counter Clock Wise
+		Citra yang diputar berlawanan arah jarum jam (Counter Clock Wise) sejauh 90 derajat
+	6. Scale
+		Citra diskala (0.5x atau 2x)
+	7. Clean All Change
+		Mengembalikan keadaan citra ke keadaan awal (saat file citra dipilih)
+
+Tab Filter : 
+	1. Grayscale
+		1.a. Average
+			gray = (Red+Green+Blue)/3
+		1.b. Luminosity
+			gray = (0.3*Red)+(0.59*Green)+(0.11*Blue)
+		1.c. Desaturation
+			gray = (Max(Red,Green,Blue)+Min(Red,Green,Blue))/2
+		1.d. Max Decomposition
+			gray = Max(Red,Green,Blue)
+		1.e. Min Decomposition
+			gray = Min(Red,Green,Blue)
+		1.f. Single Color Channel (Red)
+			gray = Red
+		1.g. Single Color Channel (Green)
+			gray = Green
+		1.h. Single Color Channel (Blue)
+			gray = Blue
+	2. Brightness and Contrast
+		2.a. Brightness
+			new_color = old_color + slider_value
+		2.b. Contrast
+			new_color = 255 x old_color - (0 + slider_value) / ((255 - slider_value) - (0 + slider_value))
+		2.c. Red
+			new_r = old_r + slider_value
+		2.d. Green
+			new_g = old_g + slider_value
+		2.e. Blue
+			new_b = old_b + slider_value
+	3. Blend Modes
+		Menambahkan layer baru kedepan citra asal, dan menyatukan kedua citra
+	4. Binarization
+		Merubah citra menjadi bentuk citra biner (0 dan 1 atau 0 dan 255) dengan threshold 128
+	5. Negative
+		Merubah citra menjadi bentuk citra negatif
+	6. Sharpening
+		Mempertajam citra menggunakan kernel filter (3x3)
+		[
+			[ 0  , -1 ,  0 ],
+			[ -1 ,  5 , -1 ],
+			[ 0  , -1 ,  0 ]
+		]
+	7. Edge Detection
+		Mendapatkan garis tepi dari objek didalam citra menggunakan kernel filter (3x3)
+		[
+			[ -1 , -1 , -1 ],
+			[ -1 ,  8 , -1 ],
+			[ -1 , -1 , -1 ]
+		]
+	8. Smoothing
+		Memperhalus citra menggunakan median filter
+	9. Histogram Equalization
+		Melakukan perataan warna histogram citra
+	10. Custom Convolution Filter
+		Konfigurasi kernel filter sesuai kebutuhan
+			11.a. 3x3
+				[
+					[  x ,  x ,  x ]
+					[  x ,  x ,  x ]
+					[  x ,  x ,  x ]
+				]
+			11.b. 5x5
+				[
+					[  x ,  x ,  x ,  x ,  x ]
+					[  x ,  x ,  x ,  x ,  x ]
+					[  x ,  x ,  x ,  x ,  x ]
+					[  x ,  x ,  x ,  x ,  x ]
+					[  x ,  x ,  x ,  x ,  x ]
+				]
+
+Tab Feature : 
+	1. Face Detection (Skin Based)
+		Mendeteksi wajah dari citra berdasarkan warna kulit (skin based)
+
+Tab Help : 
+	1. Pixel Value
+		Menampilkan nilai-nilai setiap pixel dari citra dalam bentuk tabel (Red, Green, Blue, Alpha)
+		1.a. Original Image
+		1.b. Filtered Image
+	2. Histogram
+		Menampilkan nilai-nilai setiap pixel dari citra dalam bentuk histogram (Red, Green, Blue, Gray)
+		2.a. Original Image
+		2.b. Filtered Image
+	3. History
+		Daftar riwayat perubahan terhadap citra
+	4. About
+		Tentang aplikasi ini
+
+Catatan : 
+	-> Jumlah pixel yang akan ditampilkan pada tabel <Pixel Value> akan ditampilkan sebanyak 10.000 baris data per halaman (page)
+	-> Ukuran citra yang bisa dipakai maksimal 2500 (width dan height) dan minimal 32 (width dan height)
+	-> Citra dapat di zoom in (maksimal 5000) atau zoom out (minimum 512)
+
+Shortcut key : 
+	CTRL+O  : Open new image
+	CTRL+Z  : Undo
+	ALT+T	: Toggle original image
+
+===========================================================================================
+
+Dosen Pembimbing : Rizki Kurniati
+
+Created By : Rizki Ramadandi
+NIM : 09021381722133
+
+Special Thanks : 
+Ari Firdaus
+
+===========================================================================================
+
+Sumber :
+https://en.wikipedia.org/wiki/Kernel_(image_processing)
+https://en.wikipedia.org/wiki/Unsharp_masking
+https://www.javacodex.com/More-Examples/2/6
+https://stackoverflow.com/questions/25651838/java-argb-to-jpg
+https://stackoverflow.com/questions/7759549/java-draw-line-based-on-doubles-sub-pixel-precision
+https://stackoverflow.com/questions/20389255/reading-a-resource-file-from-within-jar
+https://stackoverflow.com/questions/16953897/how-to-read-a-text-file-inside-a-jar
+https://stackoverflow.com/questions/941754/how-to-get-a-path-to-a-resource-in-a-java-jar-file/14612564
+https://stackoverflow.com/questions/7867834/get-button-name-from-actionlistener
+https://stackoverflow.com/questions/22638926/how-to-put-hover-effect-on-jbutton
+https://stackoverflow.com/questions/35104151/change-jbuttons-click-color
+https://stackoverflow.com/questions/14627223/how-to-change-a-jbutton-color-on-mouse-pressed
+https://stackoverflow.com/questions/9509313/how-to-put-the-text-of-a-jlabel-under-its-icon
+https://stackoverflow.com/questions/5260462/can-i-add-an-action-listener-to-a-jlabel
+https://stackoverflow.com/questions/4154780/jframe-catch-dispose-event
+https://stackoverflow.com/questions/4178400/creating-border-around-imageicon-on-a-jlabel-not-around-the-jlabel
+https://stackoverflow.com/questions/9417356/bufferedimage-resize
+https://stackoverflow.com/questions/27425820/constantly-changing-jslider-event-on-user-interaction
+https://stackoverflow.com/questions/10726594/bufferedimage-getrgbx-y-does-not-yield-alpha
+https://stackoverflow.com/questions/14829005/displaying-image-in-jtable
+https://stackoverflow.com/questions/6575578/convert-a-graphics2d-to-an-image-or-bufferedimage
+https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html
+https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html
+https://alvinalexander.com/java/joptionpane-showmessagedialog-examples-1
+https://www.daniweb.com/programming/software-development/threads/124033/creating-hover-effect-for-jbutton
+https://www.daniweb.com/programming/software-development/threads/279060/how-do-you-prevent-editing-of-jtable-cells
